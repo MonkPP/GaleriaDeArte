@@ -4,13 +4,15 @@
  */
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Column;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
-import java.util.Calendar;
+import javax.persistence.Table;
+import java.util.Calendar; 
+import java.io.Serializable;
+
 
 
 
@@ -20,7 +22,7 @@ import java.util.Calendar;
  */
 @Entity 
 @Table (name = "obra")
-public class ObraDeArte {
+public class ObraDeArte implements Serializable{
    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,10 +39,6 @@ public class ObraDeArte {
     private Calendar dataObra;
     private int ano;
 
-    
-    
-    
-    
     /**
      * @return the titulo
      */
